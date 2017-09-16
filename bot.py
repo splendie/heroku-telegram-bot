@@ -19,14 +19,10 @@ bot.
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import os
-import telebot
-# import some_api_lib
-# import ...
 
-# Example of your code beginning
-#           Config vars
+
+# Heroku config vars
 token = os.environ['TELEGRAM_TOKEN']
-
 
 
 # Enable logging
