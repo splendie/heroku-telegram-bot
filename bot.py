@@ -18,7 +18,6 @@ bot.
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
-import redis
 import os
 import telebot
 # import some_api_lib
