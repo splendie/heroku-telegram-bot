@@ -31,6 +31,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+count = 0
+players = []
 
 # Define a few command handlers. These usually take the two arguments bot and
 # update. Error handlers also receive the raised TelegramError object in error.
@@ -38,7 +40,10 @@ def newgame(bot, update):
     update.message.reply_text('We will start a new game of \"Undercover\". You will be given a word that you should not tell to anyone. In each round, everyone will have to describe the word. In this game, at least one of you are an undercover. In the beginning of the game, no one knows who is the undercover, including the undercover themselves. After each round, players can decide who is the undercover. Voice of majority wins. \n\nNow type \"/join\" if you want to join the game. Type \"/startgame\" after everyone has joined.')
 
 def join(bot, update):
-  update.message.reply_text(update.message.from_user.first_name)
+  first_name = update.message.from_user.first_name;
+  update.message.reply_text("Welcome %s", first_name)
+  if first_name not in players:
+    players.append(first_name)
 	
 def help(bot, update):
     update.message.reply_text('Help!')
