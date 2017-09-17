@@ -39,7 +39,7 @@ def newgame(bot, update):
 
 def join(bot, update):
 	user = update.message.effective_user()
-    update.message.reply_text(user)
+update.message.reply_text(user)
 	
 def help(bot, update):
     update.message.reply_text('Help!')
