@@ -63,7 +63,7 @@ def main():
     dp.add_handler(CommandHandler("newgame", newgame))
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("join", join))
-    dp.add_handler(CommandHandler("newgame", echo))
+#     dp.add_handler(CommandHandler("newgame", echo))
 
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
