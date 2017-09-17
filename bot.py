@@ -34,9 +34,8 @@ logger = logging.getLogger(__name__)
 
 # Define a few command handlers. These usually take the two arguments bot and
 # update. Error handlers also receive the raised TelegramError object in error.
-def start(bot, update):
-    update.message.reply_text('Hi!')
-
+def newgame(bot, update):
+    update.message.reply_text('We will start a new game of \"Undercover\". You will be given a word that you should not tell to anyone. In each round, everyone will have to describe the word. In this game, at least one of you are an undercover. In the beginning of the game, no one knows who is the undercover, including the undercover themselves.\r\n\tAfter each round, players can decide who is the undercover. Voice of majority wins. Now type \"/join\" if you want to join the game. Type \"/startgame\" after everyone has joined.')
 
 def help(bot, update):
     update.message.reply_text('Help!')
@@ -58,7 +57,7 @@ def main():
     dp = updater.dispatcher
 
     # on different commands - answer in Telegram
-    dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("newgame", newgame))
     dp.add_handler(CommandHandler("help", help))
 
     # on noncommand i.e message - echo the message on Telegram
